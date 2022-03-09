@@ -25,6 +25,8 @@ import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 {{/equals}}
 {{/if}}
 
+import { network } from 'services';
+
 {{#equals @root.httpClient 'angular'}}
 @Injectable()
 {{/equals}}
@@ -63,21 +65,11 @@ export class {{{name}}}{{{@root.postfix}}} {
 	 * @throws ApiError
 	 */
 	{{#if @root.exportClient}}
-	{{#equals @root.httpClient 'angular'}}
-	public {{{name}}}({{>parameters}}): Observable<{{>result}}> {
-		return this.httpRequest.request({
-	{{else}}
 	public {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
 		return this.httpRequest.request({
-	{{/equals}}
-	{{else}}
-	{{#equals @root.httpClient 'angular'}}
-	public {{{name}}}({{>parameters}}): Observable<{{>result}}> {
-		return __request(OpenAPI, this.http, {
 	{{else}}
 	public static {{{name}}}({{>parameters}}): Promise<{{>result}}> {
-		return __request(OpenAPI, {
-	{{/equals}}
+		return network.request({
 	{{/if}}
 			method: '{{{method}}}',
 			url: '{{{path}}}',
@@ -129,13 +121,6 @@ export class {{{name}}}{{{@root.postfix}}} {
 			{{/if}}
 			{{#if responseHeader}}
 			responseHeader: '{{{responseHeader}}}',
-			{{/if}}
-			{{#if errors}}
-			errors: {
-				{{#each errors}}
-				{{{code}}}: `{{{escapeDescription description}}}`,
-				{{/each}}
-			},
 			{{/if}}
 		});
 	}

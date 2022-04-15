@@ -3471,7 +3471,7 @@ var templateExportService = {"1":function(container,depth0,helpers,partials,data
 },"14":function(container,depth0,helpers,partials,data) {
     return "import type { BaseHttpRequest } from '../core/BaseHttpRequest';\n";
 },"16":function(container,depth0,helpers,partials,data) {
-    return "import { OpenAPI } from '../core/OpenAPI';\nimport { request as __request } from '../core/request';\n";
+    return "import { OpenAPI } from '../core/OpenAPI';\n";
 },"18":function(container,depth0,helpers,partials,data) {
     return "@Injectable()\n";
 },"20":function(container,depth0,helpers,partials,data) {
@@ -3748,8 +3748,8 @@ var templateExportService = {"1":function(container,depth0,helpers,partials,data
     + ((stack1 = lookupProperty(helpers,"equals").call(alias1,lookupProperty(lookupProperty(data,"root"),"httpClient"),"angular",{"name":"equals","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":3,"column":0},"end":{"line":14,"column":11}}})) != null ? stack1 : "")
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,lookupProperty(depth0,"imports"),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":15,"column":0},"end":{"line":20,"column":7}}})) != null ? stack1 : "")
     + ((stack1 = lookupProperty(helpers,"notEquals").call(alias1,lookupProperty(lookupProperty(data,"root"),"httpClient"),"angular",{"name":"notEquals","hash":{},"fn":container.program(9, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":21,"column":0},"end":{"line":23,"column":14}}})) != null ? stack1 : "")
-    + ((stack1 = lookupProperty(helpers,"if").call(alias1,lookupProperty(lookupProperty(data,"root"),"exportClient"),{"name":"if","hash":{},"fn":container.program(11, data, 0),"inverse":container.program(16, data, 0),"data":data,"loc":{"start":{"line":24,"column":0},"end":{"line":33,"column":7}}})) != null ? stack1 : "")
-    + "\n"
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,lookupProperty(lookupProperty(data,"root"),"exportClient"),{"name":"if","hash":{},"fn":container.program(11, data, 0),"inverse":container.program(16, data, 0),"data":data,"loc":{"start":{"line":24,"column":0},"end":{"line":32,"column":7}}})) != null ? stack1 : "")
+    + "import { request as __request } from '../core/request';\n\n"
     + ((stack1 = lookupProperty(helpers,"equals").call(alias1,lookupProperty(lookupProperty(data,"root"),"httpClient"),"angular",{"name":"equals","hash":{},"fn":container.program(18, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":35,"column":0},"end":{"line":37,"column":11}}})) != null ? stack1 : "")
     + "export class "
     + ((stack1 = alias3(alias2(depth0, "name", {"start":{"line":38,"column":16},"end":{"line":38,"column":20}} ), depth0)) != null ? stack1 : "")

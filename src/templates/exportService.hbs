@@ -29,8 +29,9 @@ import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 {{/equals}}
 {{else}}
 import { OpenAPI } from '../core/OpenAPI';
-{{/if}}
 import { request as __request } from '../core/request';
+{{/if}}
+import { network } from 'services/network';
 
 {{#equals @root.httpClient 'angular'}}
 @Injectable()

@@ -72,7 +72,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	 */
 		public {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
 		return network.request(() => {
-		this.httpRequest.request({
+		return this.httpRequest.request({
 		
 			method: '{{{method}}}',
 			url: '{{{path}}}',

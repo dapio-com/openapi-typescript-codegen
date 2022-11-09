@@ -3502,7 +3502,7 @@ var templateExportService = {"1":function(container,depth0,helpers,partials,data
     + ((stack1 = lookupProperty(helpers,"unless").call(alias1,lookupProperty(lookupProperty(data,"root"),"useOptions"),{"name":"unless","hash":{},"fn":container.program(32, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":61,"column":1},"end":{"line":67,"column":12}}})) != null ? stack1 : "")
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,lookupProperty(depth0,"results"),{"name":"each","hash":{},"fn":container.program(37, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":68,"column":1},"end":{"line":70,"column":10}}})) != null ? stack1 : "")
     + "	 * @throws ApiError\n	 */\n		public "
-    + ((stack1 = alias3(alias2(depth0, "name", {"start":{"line":73,"column":12},"end":{"line":73,"column":16}} ), depth0)) != null ? stack1 : "")
+    + ((stack1 = lookupProperty(helpers,"parseOperationId").call(alias1,lookupProperty(depth0,"name"),{"name":"parseOperationId","hash":{},"data":data,"loc":{"start":{"line":73,"column":9},"end":{"line":73,"column":36}}})) != null ? stack1 : "")
     + "("
     + ((stack1 = container.invokePartial(lookupProperty(partials,"parameters"),depth0,{"name":"parameters","data":data,"helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "): CancelablePromise<"
@@ -5378,6 +5378,9 @@ const registerHandlebarHelpers = (root) => {
             .replace(/\*\//g, '*')
             .replace(/\/\*/g, '*')
             .replace(/\r?\n(.*)/g, (_, w) => `${os.EOL} * ${w.trim()}`);
+    });
+    Handlebars__default["default"].registerHelper('parseOperationId', function (value) {
+        return value.replace(/\d+$/, "");
     });
     Handlebars__default["default"].registerHelper('escapeDescription', function (value) {
         return value.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\${/g, '\\${');

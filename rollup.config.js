@@ -35,6 +35,7 @@ const handlebarsPlugin = () => ({
                     intersection: true,
                     enumerator: true,
                     escapeComment: true,
+                    parseOperationId: true,
                     escapeDescription: true,
                     camelCase: true,
                 },

@@ -89,6 +89,10 @@ export const registerHandlebarHelpers = (root: {
             .replace(/\r?\n(.*)/g, (_, w) => `${EOL} * ${w.trim()}`);
     });
 
+    Handlebars.registerHelper('parseOperationId', function (value: string): string {
+        return value.replace(/\d+$/, '');
+    });
+
     Handlebars.registerHelper('escapeDescription', function (value: string): string {
         return value.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\${/g, '\\${');
     });
